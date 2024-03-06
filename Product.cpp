@@ -25,12 +25,15 @@ void Product::setQuanity(int quantity)
 {
 	mQuantity = quantity;
 }
-void Product::shipment(bool status)
+void Product::addShipment(int shipmentSize)
 {
-	if (status)
+	if (shipmentSize > 0)
 	{
-		mQuantity += SHIPMENTSIZE;
+		mQuantity += shipmentSize;
+		cout << "Shipment added. New quantity: " << mQuantity << "\n";
 	}
+	else
+		cerr << "Error: Quantity received in shipment must be greater than 0.\n";
 
 }
 int Product::getProductID()

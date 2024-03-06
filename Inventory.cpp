@@ -6,7 +6,7 @@ void Inventory::addProduct(const Product& p)
 }
 void Inventory::removeProduct(int productID)
 {
-	for (auto it = m_products.begin(); it !- m_products.end(); it++)
+	for (auto it = m_products.begin(); it != m_products.end(); it++)
 	{
 		if (it->getProductID() == productID)
 		{
@@ -16,7 +16,7 @@ void Inventory::removeProduct(int productID)
 	}
 }
 
-const void Inventory::displayInventory()
+void Inventory::displayInventory()
 {
 	cout << "Inventory:\n";
 	for (auto& product : m_products)
@@ -35,7 +35,7 @@ Product Inventory::findProductByID(int id)
 			return product;
 		}
 	}
-	return Product(-1, "", 0.0, 0)
+	return Product(-1, "", 0.0, 0);
 }
 
 void Inventory::saveToFile(const string& filename)
@@ -53,5 +53,17 @@ void Inventory::saveToFile(const string& filename)
 	else 
 	{
 		std::cerr << "Unable to open file for writing: " << filename << "\n";
+	}
+}
+
+void Inventory::addShipmentToProduct(int productID, int quantityReceived)
+{
+	for (auto& product : m_products) 
+	{
+		if (productID == product.getProductID()) 
+		{
+			product.addShipment(quantityReceived);
+			break;
+		}
 	}
 }

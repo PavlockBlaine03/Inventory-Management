@@ -12,8 +12,9 @@ public:
 	
 	void addProduct(const Product& p);
 	void removeProduct(int);
-	const void displayInventory();
+	void displayInventory();
 	Product findProductByID(int);
 
 	void saveToFile(const string& filename);
+	void addShipmentToProduct(int, int);
 };
