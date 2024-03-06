@@ -37,3 +37,21 @@ Product Inventory::findProductByID(int id)
 	}
 	return Product(-1, "", 0.0, 0)
 }
+
+void Inventory::saveToFile(const string& filename)
+{
+	ofstream outFile(filename);
+	if (outFile.is_open()) 
+	{
+		for (auto& product : m_products) 
+		{
+			outFile << product.serialize() << "\n";
+		}
+		outFile.close();
+		std::cout << "Inventory saved to file: " << filename << "\n";
+	}
+	else 
+	{
+		std::cerr << "Unable to open file for writing: " << filename << "\n";
+	}
+}

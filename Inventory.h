@@ -14,4 +14,6 @@ public:
 	void removeProduct(int);
 	const void displayInventory();
 	Product findProductByID(int);
+
+	void saveToFile(const string& filename);
 };

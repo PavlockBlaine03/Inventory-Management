@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 class Product
@@ -27,4 +29,6 @@ public:
 	string getProductName();
 	float getPrice();
 	int getQuanity();
+
+	string serialize();
 };

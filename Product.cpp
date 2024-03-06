@@ -49,3 +49,7 @@ int Product::getQuanity()
 {
 	return mQuantity;
 }
+string Product::serialize()
+{
+	return to_string(mProductID) + "," + mProductName + "," + to_string(mPrice) + "," + to_string(mQuantity);
+}
