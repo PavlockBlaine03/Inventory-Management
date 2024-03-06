@@ -1,6 +1,6 @@
 #include "Product.h"
 
-Product::Product(string id, string name, float price, int quantity)
+Product::Product(int id, string name, float price, int quantity)
 {
 	mProductID = id;
 	mProductName = name;
@@ -9,7 +9,7 @@ Product::Product(string id, string name, float price, int quantity)
 }
 Product::Product() {}
 
-void Product::setProductID(string id)
+void Product::setProductID(int id)
 {
 	mProductID = id;
 }
@@ -33,7 +33,7 @@ void Product::shipment(bool status)
 	}
 
 }
-string Product::getProductID()
+int Product::getProductID()
 {
 	return mProductID;
 }

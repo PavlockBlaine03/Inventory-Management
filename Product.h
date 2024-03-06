@@ -5,25 +5,25 @@ using namespace std;
 class Product
 {
 private:
-	string mProductID;
+	int mProductID;
 	string mProductName;
 	float mPrice;
 	int mQuantity;
 	bool gotShipment = false;
 	
-	const int SHIPMENTSIZE = 25;
+	const int SHIPMENTSIZE = 10;
 
 public:
 	Product();
-	Product(string, string, float, int);
+	Product(int, string, float, int);
 
-	void setProductID(string);
+	void setProductID(int);
 	void setProductName(string);
 	void setPrice(float);
 	void setQuanity(int);
 	void shipment(bool);
 
-	string getProductID();
+	int getProductID();
 	string getProductName();
 	float getPrice();
 	int getQuanity();
